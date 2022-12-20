@@ -1,5 +1,32 @@
 package org.generation.italy.service;
 
-public class PhotoService {
+import java.util.List;
+import java.util.Optional;
 
+import org.generation.italy.pojo.Photo;
+import org.generation.italy.repo.PhotoRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PhotoService {
+	
+	@Autowired
+	private PhotoRepo pR;
+	
+	public void save(Photo photo) {
+		pR.save(photo);
+	}
+	
+	public List<Photo> findAll(){
+		return pR.findAll();
+	}
+	
+	public Optional<Photo> findPhotoById(int id){
+		return pR.findById(id);
+	}
+	
+	public void delete (Photo photo) {
+		pR.delete(photo);
+	}
 }

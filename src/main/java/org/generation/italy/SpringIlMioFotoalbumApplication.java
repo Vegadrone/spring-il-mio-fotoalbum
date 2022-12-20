@@ -1,13 +1,34 @@
 package org.generation.italy;
 
+import org.generation.italy.pojo.Photo;
+import org.generation.italy.service.PhotoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringIlMioFotoalbumApplication {
+public class SpringIlMioFotoalbumApplication implements CommandLineRunner {
+	
+	@Autowired
+	PhotoService pS;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringIlMioFotoalbumApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		Photo p1 = new Photo ("Title1", "Description1","https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80", true);
+		Photo p2 = new Photo ("Title2", "Description2","https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg", true);
+		Photo p3 = new Photo ("Title3", "Description3","https://img.freepik.com/free-photo/portrait-amazed-pinup-woman-with-camera-charming-photographer-with-red-lips-taking-pictures_197531-15200.jpg?w=2000", false);
+		Photo p4 = new Photo ("Title4", "Description4","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAfHiaJaqzXDhv-mVG8J1M_UK-6PS8sdtZ4g&usqp=CAU", true);
+		
+		pS.save(p1);
+		pS.save(p2);
+		pS.save(p3);
+		pS.save(p4);
 	}
 
 }
