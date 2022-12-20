@@ -1,6 +1,8 @@
 package org.generation.italy;
 
+import org.generation.italy.pojo.Category;
 import org.generation.italy.pojo.Photo;
+import org.generation.italy.service.CategoryService;
 import org.generation.italy.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +14,9 @@ public class SpringIlMioFotoalbumApplication implements CommandLineRunner {
 	
 	@Autowired
 	PhotoService pS;
+	
+	@Autowired
+	CategoryService cS;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringIlMioFotoalbumApplication.class, args);
@@ -29,6 +34,17 @@ public class SpringIlMioFotoalbumApplication implements CommandLineRunner {
 		pS.save(p2);
 		pS.save(p3);
 		pS.save(p4);
+		
+		Category c1 = new Category ("Bella");
+		Category c2 = new Category ("Bellissima");
+		Category c3 = new Category ("Bellona");
+		Category c4 = new Category ("Bellella");
+		
+		cS.save(c1);
+		cS.save(c2);
+		cS.save(c3);
+		cS.save(c4);
+
 	}
 
 }
