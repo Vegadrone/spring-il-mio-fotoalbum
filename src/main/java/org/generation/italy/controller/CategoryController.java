@@ -3,7 +3,6 @@ package org.generation.italy.controller;
 import java.util.List;
 
 import org.generation.italy.pojo.Category;
-import org.generation.italy.pojo.Photo;
 import org.generation.italy.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
