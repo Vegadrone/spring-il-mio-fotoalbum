@@ -30,4 +30,8 @@ public class CategoryService {
 	public void delete (Category category) {
 		cR.delete(category);
 	}
+	
+	public void deleteById (int id) {
+		cR.deleteById(id);
+	}
 }
