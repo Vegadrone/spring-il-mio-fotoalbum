@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.validator.constraints.URL;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,30 +28,40 @@ public class Photo {
 	@NotBlank(message = "Il titolo della foto non può essere vuoto")
 	private String title;
 	
+	@Column(name = "description")
 	@Lob
+	@Nullable
 	private String description;
 	
+	@Column(name = "url")
 	@URL(message="URL non valido")
 	@NotBlank(message = "L'URL non può essere vuoto")
 	private String imgUrl;
 	
+	@Nullable
+	@Column(name = "tag")
+	private String tag;
+	
 	@NotNull
+	@Column(name = "is_visible")
 	private Boolean visible;
 	
 	@ManyToMany
+	@Nullable
 	private List<Category> categories;
 	
 	
 	public Photo (){}
-	public Photo (String title, String description, String imgUrl, Boolean visible) {
+	public Photo (String title, String description, String imgUrl, String tag, Boolean visible) {
 		setTitle(title);
 		setDescription(description);
 		setImgUrl(imgUrl);
+		setTag(tag);
 		setVisible(visible);
 	}
 	
-	public Photo(String title, String description, String imgUrl, Boolean visible, List<Category> categories) {
-		this(title, description, imgUrl, visible);
+	public Photo(String title, String description, String imgUrl, String tag, Boolean visible, List<Category> categories) {
+		this(title, description, imgUrl, tag, visible);
 		setCategories(categories);
 	}
 	
@@ -101,12 +112,19 @@ public class Photo {
 		this.categories = categories;
 	}
 	
+	public String getTag() {
+		return tag;
+	}
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
 	@Override
 	public String toString() {
 	
 		return "Foto: (" +  getId() + ")" + " - " + getTitle() +
 				 "\nDescrizione: " + getDescription() +
 				 "\nURL: " + getImgUrl() +
+				 "\nTag: " + getTag() +
 				 "\nVisibile?: " + getVisible();
 	}
 }

@@ -25,10 +25,10 @@ public class SpringIlMioFotoalbumApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Photo p1 = new Photo ("Title1", "Description1","https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80", true);
-		Photo p2 = new Photo ("Title2", "Description2","https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg", true);
-		Photo p3 = new Photo ("Title3", "Description3","https://img.freepik.com/free-photo/portrait-amazed-pinup-woman-with-camera-charming-photographer-with-red-lips-taking-pictures_197531-15200.jpg?w=2000", false);
-		Photo p4 = new Photo ("Title4", "Description4","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAfHiaJaqzXDhv-mVG8J1M_UK-6PS8sdtZ4g&usqp=CAU", true);
+		Photo p1 = new Photo ("Title1", "Description1","https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80", "#LOL", true);
+		Photo p2 = new Photo ("Title2", "Description2","https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg", "#LOLLISSIMO", true);
+		Photo p3 = new Photo ("Title3", "Description3","https://img.freepik.com/free-photo/portrait-amazed-pinup-woman-with-camera-charming-photographer-with-red-lips-taking-pictures_197531-15200.jpg?w=2000", "#LOLLONE", false);
+		Photo p4 = new Photo ("Title4", "Description4","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAfHiaJaqzXDhv-mVG8J1M_UK-6PS8sdtZ4g&usqp=CAU", "#LOLLE", true);
 		
 		pS.save(p1);
 		pS.save(p2);
@@ -44,7 +44,7 @@ public class SpringIlMioFotoalbumApplication implements CommandLineRunner {
 		cS.save(c2);
 		cS.save(c3);
 		cS.save(c4);
-
+		//System.out.println(p1.toString());
+		//System.out.println(c1.toString());
 	}
-
 }
