@@ -1,25 +1,25 @@
 <template>
-  <HomePhoto />
+  <div id='App'>
+    <HeaderComponent />
+    <HomePhoto />
+  </div>
 </template>
 
 <script>
 import HomePhoto from './components/HomePhoto.vue'
+import HeaderComponent from './components/partials/HeaderComponent.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HomePhoto
+    HomePhoto,
+    HeaderComponent
+    
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+ @import "~bootstrap/scss/bootstrap.scss";
 </style>
