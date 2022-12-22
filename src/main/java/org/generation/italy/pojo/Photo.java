@@ -4,7 +4,10 @@ import java.util.List;
 
 import org.hibernate.validator.constraints.URL;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.annotation.Nullable;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -48,7 +52,11 @@ public class Photo {
 	
 	@ManyToMany
 	@Nullable
+	@JsonIgnore
 	private List<Category> categories;
+	
+	@OneToMany(mappedBy = "photo", cascade = CascadeType.REMOVE)
+	private List<Comment> comments;
 	
 	
 	public Photo (){}
@@ -112,12 +120,22 @@ public class Photo {
 		this.categories = categories;
 	}
 	
+	public List<Comment> getComments() {
+		return comments;
+	}
+	
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+	
 	public String getTag() {
 		return tag;
 	}
+	
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
+	
 	@Override
 	public String toString() {
 	

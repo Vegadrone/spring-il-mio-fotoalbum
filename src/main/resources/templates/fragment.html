@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" />
+    <title>Photo Album</title>
+</head>
+
+<body>
+<header th:fragment="header()" class="mb-5">
+   <nav class="navbar navbar-expand-lg bg-dark">
+       <div class="container-fluid">
+           <a class="navbar-brand text-light fw-bolder" href="http://localhost:8081/">JavaGram</a>
+
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   <li class="nav-item">
+                       <a class="nav-link active text-light" aria-current="page"
+                           href="http://localhost:8080/photo">Go to Photo</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link active text-light" aria-current="page" href="http://localhost:8080/category">Go
+                           to Category</a>
+                   </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" th:href="@{/login}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" th:href="@{/logout}">Logout</a>
+                    </li>
+               </ul>
+           </div>
+       </div>
+   </nav>
+</header>
+
+</body>
+
+</html>

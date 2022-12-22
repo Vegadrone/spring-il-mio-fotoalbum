@@ -23,5 +23,11 @@ public class PhotoApiController {
 	public List<Photo> getAll() {
 		return pS.findAll();
 	}
+	
 
+	@GetMapping("/search/{query}")
+	public List<Photo> searchPhotoByTitleOrTag(@PathVariable("query") String query) {
+		List<Photo> photos = query == null ? pS.findAll() : pS.findByNameOrTag(query);
+		return photos;
+ 	}
 }
