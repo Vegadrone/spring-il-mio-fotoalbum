@@ -1,13 +1,18 @@
 {
   "name": "frontend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "",
+  "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "index.js",
   "dependencies": {
+    "axios": "^1.2.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
@@ -39,5 +44,8 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "_id": "frontend@1.0.0",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!"
 }

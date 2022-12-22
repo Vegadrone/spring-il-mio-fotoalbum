@@ -24,7 +24,7 @@ public class Category {
 	@NotBlank(message = "Il nome della categoria non può essere vuoto")
 	private String name;
 	
-	@ManyToMany(mappedBy = "categories", cascade = CascadeType.REMOVE)
+	@ManyToMany(mappedBy = "categories")
 	private List<Photo> photos;
 	
 	public Category() {}
